@@ -1,0 +1,17 @@
+application: gaepmail
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+- url: /stylesheets
+  static_dir: stylesheets
+
+- url: /favicon.ico
+  static_files: img/favicon/favicon.ico
+  upload: img/favicon/favicon.ico
+  #mime_type: image/x-icon
+  mime_type: image/vnd.microsoft.icon
+
+- url: /.*
+  script: mail.py
